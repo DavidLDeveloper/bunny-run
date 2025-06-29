@@ -13,7 +13,7 @@ function _init()
 		sit_sprite=9,
 		size=12,
 		sp=1,
-		speed=1,
+		speed=2,
 		flip=false,s
 	}
 	message = ""
