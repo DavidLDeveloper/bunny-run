@@ -1,16 +1,38 @@
 --❎🐱⬆️⬇️⬅️➡️
 function move_player()
+    apply_grav(player,0)
     if btn(➡️) then
         player.x += player.speed
         player.flip = true
         player.running = true
+        if map_col(player, 0) then player.x -= player.speed end
     elseif btn(⬅️)then
         player.x -= player.speed
         player.flip = false
         player.running = true
+        if map_col(player, 0) then player.x += player.speed end
     else
         player.running = false
         player.sp=1
+    end
+
+    if player.jumping and not btn(❎) then player.jump_time = 30 end
+    if btn(❎) then
+        player.jumping = true
+        if player.jump_time < 18 then
+            player.jump_time += 2
+            player.y -= 5
+            -- check for top collision
+            if top_col(player, 0) then
+                player.y += 3 
+                player.jump_time=30
+                -- while top_col(player, 0) do
+                --     player.y -= 1
+                -- end
+
+            end
+        
+        end
     end
 end
 

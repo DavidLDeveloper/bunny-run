@@ -1,31 +1,34 @@
 --❎🐱⬆️⬇️⬅️➡️
 function _init()
-	grav = .2
+	grav = 2
 	player = {
 		running=false,
-		x=63,
-		y=63,
+		jumping=false,
+		jump_time=0,
+		x=80,
+		y=10,
+		dy=0,
 		sprites={7,5},
 		sit_sprite=9,
+		size=12,
 		sp=1,
 		speed=1,
-		flip=true
+		flip=false,s
 	}
+	message = ""
 end
 
 function _update()
-	-- player.sp = player.sp + .1
-	-- if player.sp > 2.9 then
-	-- 	player.sp = 1
-	-- end
+	local cam_x = player.x - 64 + player.size
+   	local cam_y = 0
+   	camera(cam_x, cam_y)
 	move_player()
 	anim_player()
 end
 
 function _draw()
 	cls()
-	map(0,0,0,0,16,16)
-	--_update()
-	--spr(player.sprites[flr(player.sp)], player.x, player.y, 2,2, player.flip)
+	map(0,0,0,0,129,16)
+	print(message)
 	draw_player()
 end
