@@ -24,11 +24,10 @@ function move_player()
             player.y -= 5
             -- check for top collision
             if top_col(player, 0) then
-                player.y += 3 
                 player.jump_time=30
-                -- while top_col(player, 0) do
-                --     player.y -= 1
-                -- end
+                while top_col(player, 0) do
+                    player.y += 1
+                end
 
             end
         

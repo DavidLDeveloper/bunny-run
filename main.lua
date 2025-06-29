@@ -17,6 +17,7 @@ function _init()
 		flip=false,s
 	}
 	message = ""
+	s = {x=96, y=104, size=8, spr=33}
 end
 
 function _update()
@@ -25,11 +26,17 @@ function _update()
    	camera(cam_x, cam_y)
 	move_player()
 	anim_player()
+	
 end
 
 function _draw()
 	cls(12)
 	map(0,0,0,0,129,16)
-	print(message)
+	print(message,player.x - 10, player.y - 10)
 	draw_player()
+
+	-- forground tests
+	spr(s.spr,s.x,s.y)
+	-- map(0,17,0,0,129,16)
+	draw_hitbox()
 end
