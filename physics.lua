@@ -47,6 +47,7 @@ function apply_grav(obj)
         player.jumping = false
         player.jump_time = 0
         obj.y -= 1
+        if(not btn(❎)) player.jump_debounce = true
     end
 end
 

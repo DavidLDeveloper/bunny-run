@@ -14,9 +14,10 @@ function _init()
 		size=12,
 		sp=1,
 		speed=2,
-		flip=false,s
+		flip=false,
+		jump_debounce = true
 	}
-	message = ""
+	message = player.jump_debounce
 	s = {x=96, y=104, size=8, spr=33}
 end
 
@@ -26,6 +27,7 @@ function _update()
    	camera(cam_x, cam_y)
 	move_player()
 	anim_player()
+	message = player.jump_debounce
 	
 end
 
