@@ -44,6 +44,7 @@ function apply_grav(obj)
     obj.y += grav
 
     while map_col(obj, flag) do
+        player.jumping = false
         player.jump_time = 0
         obj.y -= 1
     end

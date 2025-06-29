@@ -9,6 +9,7 @@ function _init()
 		y=10,
 		dy=0,
 		sprites={7,5},
+		j_sprites={7,11},
 		sit_sprite=9,
 		size=12,
 		sp=1,
@@ -27,7 +28,7 @@ function _update()
 end
 
 function _draw()
-	cls()
+	cls(12)
 	map(0,0,0,0,129,16)
 	print(message)
 	draw_player()

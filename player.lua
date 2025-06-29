@@ -44,7 +44,9 @@ function anim_player()
 end
 
 function draw_player() 
-	if player.running then
+    if player.jumping then
+        spr(player.j_sprites[flr(player.sp)], player.x, player.y, 2,2, player.flip)
+    elseif player.running then
         spr(player.sprites[flr(player.sp)], player.x, player.y, 2,2, player.flip)
     else
         spr(player.sit_sprite, player.x, player.y, 2,2, player.flip)
