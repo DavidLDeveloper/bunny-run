@@ -5,7 +5,8 @@ function _init()
 		running=false,
 		x=63,
 		y=63,
-		sprites={5,7},
+		sprites={7,5},
+		sit_sprite=9,
 		sp=1,
 		speed=1,
 		flip=true

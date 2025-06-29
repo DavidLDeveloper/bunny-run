@@ -22,6 +22,9 @@ function anim_player()
 end
 
 function draw_player() 
-	spr(player.sprites[flr(player.sp)], player.x, player.y, 2,2, player.flip)
-
+	if player.running then
+        spr(player.sprites[flr(player.sp)], player.x, player.y, 2,2, player.flip)
+    else
+        spr(player.sit_sprite, player.x, player.y, 2,2, player.flip)
+    end
 end
