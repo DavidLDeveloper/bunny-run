@@ -18,6 +18,7 @@ function move_player()
 
     if player.jumping and not btn(❎) then player.jump_time = 30 end
     if btn(❎) and (player.jumping or player.jump_debounce)  then
+        if (player.jump_time == 0) sfx(0)
         player.jumping = true
         player.jump_debounce = false
         if player.jump_time < 18 then

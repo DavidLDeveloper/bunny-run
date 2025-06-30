@@ -17,8 +17,16 @@ function _init()
 		flip=false,
 		jump_debounce = true
 	}
-	message = player.jump_debounce
-	s = {x=96, y=104, size=8, spr=33}
+	message = ""
+	sprites = initiate_sprites()
+	-- {
+    --     {x=40, y=110, size=8, spr=1,visible=true},
+    --     {x=48, y=110, size=8, spr=1,visible=true},
+    --     {x=64, y=110, size=8, spr=2,visible=true},
+    -- }
+	
+	f_sprites = {}
+	debugging = false
 end
 
 function _update()
@@ -26,19 +34,21 @@ function _update()
    	local cam_y = 0
    	camera(cam_x, cam_y)
 	move_player()
+	message = ""
+	check_items_col()
 	anim_player()
-	message = player.jump_debounce
+
+	-- message = player.jump/_debounce
 	
 end
 
 function _draw()
 	cls(12)
 	map(0,0,0,0,129,16)
-	print(message,player.x - 10, player.y - 10)
+	draw_items()
 	draw_player()
-
-	-- forground tests
-	spr(s.spr,s.x,s.y)
-	-- map(0,17,0,0,129,16)
+	if debugging then 
 	draw_hitbox()
+	print(message,player.x - 10, player.y - 10)
+	end
 end
