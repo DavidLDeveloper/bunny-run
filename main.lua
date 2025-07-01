@@ -6,7 +6,7 @@ function _init()
 		jumping=false,
 		jump_time=0,
 		x=80,
-		y=10,
+		y=90,
 		dy=0,
 		sprites={7,5},
 		j_sprites={7,11},
